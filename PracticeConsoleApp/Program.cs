@@ -1,19 +1,20 @@
 ﻿using System;
 
-namespace PracticeConsoleApp
+namespace P_D120
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please M");
+            Console.WriteLine("please N");
             string input = Console.ReadLine();
-            int M;
-            if(!int.TryParse(input.Split(' ')[0], out M)) return;
-            //int N;
-            //if(!int.TryParse(input.Split(' ')[1], out N)) return;
-            Console.WriteLine("Output is");
-            Console.WriteLine(M.ToString());
+            //1<= N <= 50
+            int N;
+            if(!int.TryParse(input, out N)) return;
+            
+            int result = N*12;
+
+            Console.WriteLine(result.ToString());
         }
     }
 }
