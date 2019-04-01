@@ -6,7 +6,7 @@ namespace P_D120
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please N");
+            //Console.WriteLine("please N");
             string input = Console.ReadLine();
             //1<= N <= 50
             int N;
