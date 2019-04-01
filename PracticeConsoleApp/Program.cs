@@ -1,37 +1,33 @@
 ﻿using System;
 
-namespace P_D118
+namespace P_D117
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please S");
-            string input_S = Console.ReadLine();
+            
             //Console.WriteLine("please N");
             string input_N = Console.ReadLine();
+            //Console.WriteLine("please S");
+            string input_Data = Console.ReadLine();
 
             int N;
             if(!int.TryParse(input_N, out N)) return;
-
-
+            if(N < 0 || N > 100) return;
+            
             int result = 0;
-            if(input_S == "S")
-            {
-                if(N < 1 || N > 65) return;
 
-                result = 1926 + N -1;
-            }
-            else if(input_S == "H")
+            var list = input_Data.Split(' ');
+            foreach(var item in list)
             {
-                if(N < 1 || N > 31) return;
+                int num;
+                if(!int.TryParse(item,out num)) return;
 
-                result = 1989 + N -1;
+                result += num;
             }
-            else
-            {
-                return;
-            }
+
+            if(N == 0) result = 0;
 
             Console.WriteLine(result.ToString());
         }
