@@ -1,22 +1,39 @@
 ﻿using System;
 
-namespace P_D119
+namespace P_D118
 {
     class Program
     {
         static void Main(string[] args)
         {
+            //Console.WriteLine("please S");
+            string input_S = Console.ReadLine();
             //Console.WriteLine("please N");
-            string input = Console.ReadLine();
-            //1<= N <= 15
-            double N;
-            if(!double.TryParse(input, out N)) return;
-            
-            if( N < 1 || N > 15 ) return;
+            string input_N = Console.ReadLine();
 
-            string temp = String.Format("3.141592653589793");
-            string result = temp.Substring(0,(int)N + 2);
-            Console.WriteLine(result);
+            int N;
+            if(!int.TryParse(input_N, out N)) return;
+
+
+            int result = 0;
+            if(input_S == "S")
+            {
+                if(N < 1 || N > 65) return;
+
+                result = 1926 + N -1;
+            }
+            else if(input_S == "H")
+            {
+                if(N < 1 || N > 31) return;
+
+                result = 1989 + N -1;
+            }
+            else
+            {
+                return;
+            }
+
+            Console.WriteLine(result.ToString());
         }
     }
 }
