@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P_D112
+namespace P_D111
 {
     class Program
     {
@@ -11,16 +11,20 @@ namespace P_D112
             
             int n;
             if(!int.TryParse(input_n , out n)) return;
-            if(n < 1 || n > 200) return;
+            if(n < 1 || n > 100) return;
             
             //Console.WriteLine("please n");
-            string input_h = Console.ReadLine();
+            string input_S = Console.ReadLine();
 
-            int h;
-            if(!int.TryParse(input_h , out h)) return;
-            if(h < 1 || h > 24) return;
-
-            double result = n*h;
+            string result = "";
+            if(input_S.Length >= n)
+            {
+                result = input_S.Substring(0,n);
+            }
+            else
+            {
+                result = input_S;
+            }
 
             Console.WriteLine(result.ToString());
         }
