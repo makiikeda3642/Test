@@ -1,24 +1,25 @@
 ﻿using System;
 
-namespace P_D114
+namespace P_D113
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please a b");
-            string input_ab = Console.ReadLine();
+            //Console.WriteLine("please h:m");
+            string input_hm = Console.ReadLine();
             
-            double a;
-            if(!double.TryParse(input_ab.Split(' ')[0], out a)) return;
-            if(a < 0D || a > 50D) return;
+            int h;
+            if(!int.TryParse(input_hm.Split(':')[0], out h)) return;
+            if(h < 0 || h > 12) return;
             
-            double b;
-            if(!double.TryParse(input_ab.Split(' ')[1], out b)) return;
-            if(b < 1D || b > 10000D) return;
-            double result = Math.Floor(b + b*a/100D);
+            int m;
+            if(!int.TryParse(input_hm.Split(':')[1], out m)) return;
+            if(m < 0 || m > 59) return;
 
-            Console.WriteLine(Convert.ToInt32(result).ToString());
+            double result = h >= 8 ? h - 8 : h + 16;
+
+            Console.WriteLine(result.ToString() + ":" + m.ToString());
         }
     }
 }
