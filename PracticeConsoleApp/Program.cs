@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P_D116
+namespace P_D115
 {
     class Program
     {
@@ -12,9 +12,9 @@ namespace P_D116
 
             int N;
             if(!int.TryParse(input_N, out N)) return;
-            if(N < 100 || N > 100000) return;
+            if(N < 2 || N > 50) return;
             
-            int result = N - N%100;
+            int result = N%2==0 ? N/2 : (N-1)/2;
 
             Console.WriteLine(result.ToString());
         }
