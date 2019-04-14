@@ -1,20 +1,23 @@
 ﻿using System;
 
-namespace P_D103
+namespace P_D102
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input S");
+            //Console.WriteLine("please input N");
             string input_line_1 = Console.ReadLine();
 
-            for(int i=input_line_1.Length - 1; i>=0; i--)
-            {
-                Console.Write(input_line_1[i]);
-            }
+            int N;
+            if(!int.TryParse(input_line_1 , out N)) return;
+            if(N < 1 || N > 30) return;
 
-            Console.WriteLine();
+            int result = 100;
+
+            result+=(N*10);
+
+            Console.WriteLine(result.ToString());
         }
     }
 }
