@@ -1,32 +1,30 @@
 ﻿using System;
 
-namespace P_D101
+namespace P_D100
 {
+    
     class Program
     {
+        public static int CountChar(string s, char c) {
+            return s.Length - s.Replace(c.ToString(), "").Length;
+        }
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input N M");
+            //Console.WriteLine("please input S");
             string input_line_1 = Console.ReadLine();
 
-            int N;
-            if(!int.TryParse(input_line_1.Split(' ')[0] , out N)) return;
-            if(N < 1 || N > 50) return;
+            int characterCount_1 = CountChar(input_line_1,'_');
+            int characterCount_2 = CountChar(input_line_1,'-');
 
-            int M;
-            if(!int.TryParse(input_line_1.Split(' ')[1] , out M)) return;
-            if(M < 1 || M > 50) return;
+            string result = "";
 
-
-            string result = "NO";
-
-            if(N%2==0 && M%2==1)
+            if((characterCount_1==characterCount_2)|| (characterCount_1>characterCount_2))
             {
-                result = "YES";
+                result = input_line_1.Replace("-","_");
             }
-            else if(N%2==1 && M%2==0)
+            else
             {
-                result = "YES";
+                result = input_line_1.Replace("_","-");
             }
 
             Console.WriteLine(result);
