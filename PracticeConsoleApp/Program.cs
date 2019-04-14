@@ -1,26 +1,29 @@
 ﻿using System;
 
-namespace P_D095
+namespace P_D096
 {
     class Program
     {
+        public static int CountChar(string s, char c) {
+            return s.Length - s.Replace(c.ToString(), "").Length;
+        }
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input N M");
+            //Console.WriteLine("please input");
             string input_line_1 = Console.ReadLine();
-            int N;
-            if(!int.TryParse(input_line_1 , out N)) return;
-            if(N < 100 || N > 2000) return;
 
-            string input_line_2 = Console.ReadLine();
-            int M;
-            if(!int.TryParse(input_line_2 , out M)) return;
-            if(M < 100 || M > 2000) return;
+            int have_I = CountChar(input_line_1,'I') > 0 ? 1:0;
+            int have_l = CountChar(input_line_1,'l') > 0 ? 1:0;
+            int have_i = CountChar(input_line_1,'i') > 0 ? 1:0;
 
+            string result = input_line_1;
 
-            int result = N/M;
+            if((have_I + have_l + have_i) >= 2)
+            {
+                result = "caution";
+            }
 
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result);
         }
     }
 }
