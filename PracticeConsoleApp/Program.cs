@@ -1,31 +1,25 @@
 ﻿using System;
 
-namespace P_D109
+namespace P_D108
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please m d");
-            string input_abc = Console.ReadLine();
+            //Console.WriteLine("please input t");
+            string input_line = Console.ReadLine();
             
-            int m;
-            if(!int.TryParse(input_abc.Split(' ')[0] , out m)) return;
-            if(m < 1 || m > 12) return;
-            
-            int d;
-            if(!int.TryParse(input_abc.Split(' ')[1] , out d)) return;
-            if(d < 1 || d > 31) return;
+            int t;
+            if(!int.TryParse(input_line.Split(' ')[0] , out t)) return;
+            if(t < 1 || t > 24) return;
 
-            string result = "No";
-
-            string stringDate = m.ToString() + d.ToString();
-            if(stringDate.Replace(stringDate[0].ToString(),"") == "")
+            int result = 0;
+            while(result * t < 24)
             {
-                result = "Yes";
+                result++;
             }
 
-            Console.WriteLine(result);
+            Console.WriteLine(result.ToString());
         }
     }
 }
