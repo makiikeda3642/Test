@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace P_D097
+namespace P_D096
 {
     class Program
     {
