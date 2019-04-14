@@ -1,21 +1,26 @@
 ﻿using System;
 
-namespace P_D105
+namespace P_D104
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input S");
+            //Console.WriteLine("please input N");
             string input_line_1 = Console.ReadLine();
-            string input_line_2 = Console.ReadLine();
 
-            string result = "No";
-            if(input_line_1.Length == input_line_2.Length)
+            int N;
+            if(!int.TryParse(input_line_1 , out N)) return;
+            if(N < 1 || N > 50) return;
+
+            int result = 1000;
+
+            if(N >= 10)
             {
-                result = "Yes";
+                result = N * 150;
             }
-            Console.WriteLine(result);
+
+            Console.WriteLine(result.ToString());
         }
     }
 }
