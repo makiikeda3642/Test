@@ -1,25 +1,32 @@
 ﻿using System;
 
-namespace P_D098
+namespace P_D097
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input a b");
+            //Console.WriteLine("please input");
             string input_line_1 = Console.ReadLine();
-            int a;
-            if(!int.TryParse(input_line_1.Split(' ')[0] , out a)) return;
-            if(a < 200000 || a > 1000000) return;
 
-            int b;
-            if(!int.TryParse(input_line_1.Split(' ')[1] , out b)) return;
-            if(b < 1 || b > 6) return;
+            int counter = 0;
 
+            for(int i=0; i<7; i++)
+            {
+                int N;
+                if(!int.TryParse(input_line_1.Split(' ')[i] , out N)) return;
+                
+                counter+=N;
+            }
+            
+            string result = "no";
 
-            int result = a*b;
+            if(counter >= 5)
+            {
+                result = "yes";
+            }
 
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result);
         }
     }
 }
