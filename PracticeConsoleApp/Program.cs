@@ -1,26 +1,29 @@
 ﻿using System;
 
-namespace P_D095
+namespace P_D094
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("please input N M");
-            string input_line_1 = Console.ReadLine();
-            int N;
-            if(!int.TryParse(input_line_1 , out N)) return;
-            if(N < 100 || N > 2000) return;
+            int counter_dog = 0;
+            int counter_cat = 0;
 
-            string input_line_2 = Console.ReadLine();
-            int M;
-            if(!int.TryParse(input_line_2 , out M)) return;
-            if(M < 100 || M > 2000) return;
+            for(int i=0; i<3; i++)
+            {
+                string input_line = Console.ReadLine();
 
+                if(input_line == "dog")
+                {
+                    counter_dog++;
+                }
+                else if(input_line == "cat")
+                {
+                    counter_cat++;
+                }
+            }
 
-            int result = N/M;
-
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(counter_dog > counter_cat ? "dog" : "cat");
         }
     }
 }
